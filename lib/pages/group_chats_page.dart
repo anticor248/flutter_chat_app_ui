@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/bubble_stories.dart';
+import '../utils/single_chat.dart';
 
 class GroupChatsPage extends StatefulWidget {
   const GroupChatsPage({Key? key}) : super(key: key);
@@ -17,15 +17,11 @@ class _GroupChatsPageState extends State<GroupChatsPage> {
         child: ListView(
           scrollDirection: Axis.vertical,
           children: [
-            BubbleStories(),
-            BubbleStories(),
-            BubbleStories(),
-            BubbleStories(),
-            BubbleStories(),
-            BubbleStories(),
-            BubbleStories(),
-            BubbleStories(),
-            BubbleStories(),
+            for (int i = 0; i < 10; i++)
+              (SingleChat(
+                chatTitle: 'Chat Title $i',
+                chatSubTitle: 'Chat SubTitle $i',
+              )),
           ],
         ),
       ),

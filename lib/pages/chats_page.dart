@@ -17,17 +17,11 @@ class _ChatsPageState extends State<ChatsPage> {
         child: ListView(
           scrollDirection: Axis.vertical,
           children: [
-            SingleChat(),
-            SingleChat(),
-            SingleChat(),
-            SingleChat(),
-            SingleChat(),
-            SingleChat(),
-            SingleChat(),
-            SingleChat(),
-            SingleChat(),
-            SingleChat(),
-            SingleChat(),
+            for (int i = 0; i < 10; i++)
+              (SingleChat(
+                chatTitle: 'Chat Title $i',
+                chatSubTitle: 'Chat SubTitle $i',
+              )),
           ],
         ),
       ),
