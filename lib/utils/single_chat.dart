@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:unicons/unicons.dart';
 
 import '../pages/chat_screen.dart';
 
 class SingleChat extends StatelessWidget {
   late String chatTitle;
   late String chatSubTitle;
-  SingleChat({required this.chatTitle, required this.chatSubTitle});
+  late int imageName;
+  SingleChat(
+      {required this.chatTitle,
+      required this.chatSubTitle,
+      required this.imageName});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -35,11 +38,9 @@ class SingleChat extends StatelessWidget {
               color: Colors.grey.shade100),
           child: ListTile(
             leading: CircleAvatar(
-              radius: 32,
-              child: Icon(
-                UniconsLine.user,
-                size: 28,
-              ),
+              backgroundImage:
+                  AssetImage('lib/assets/profilepic_${imageName + 1}.png'),
+              radius: 36,
             ),
             title: Text(chatTitle),
             subtitle: Text(chatSubTitle),

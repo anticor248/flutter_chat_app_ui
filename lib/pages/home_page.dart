@@ -53,11 +53,10 @@ class _HomePageState extends State<HomePage> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    BubbleStories(),
-                    BubbleStories(),
-                    BubbleStories(),
-                    BubbleStories(),
-                    BubbleStories(),
+                    for (int i = 0; i < 9; i++)
+                      (BubbleStories(
+                        imageName: i,
+                      )),
                   ],
                 ),
               ),
@@ -84,7 +83,7 @@ class _HomePageState extends State<HomePage> {
             //TODO TabBar (2 Tabs)
 
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: TabBar(
                 labelColor: Colors.deepPurple,
                 indicatorColor: Colors.deepPurple,

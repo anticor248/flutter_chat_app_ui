@@ -12,7 +12,7 @@ class _VideoCallPageState extends State<VideoCallPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('VideoCallPage'),
+        child: Image.asset('lib/assets/profilepic_1.png'),
       ),
     );
   }

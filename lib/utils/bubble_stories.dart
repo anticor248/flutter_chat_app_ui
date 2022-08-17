@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:unicons/unicons.dart';
 
 class BubbleStories extends StatelessWidget {
-  const BubbleStories({Key? key}) : super(key: key);
-
+  int imageName;
+  BubbleStories({required this.imageName});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,13 +12,10 @@ class BubbleStories extends StatelessWidget {
           Row(
             children: [
               CircleAvatar(
-                child: Center(
-                    child: Icon(
-                  UniconsLine.user,
-                  size: 36,
-                )),
+                backgroundImage:
+                    AssetImage('lib/assets/profilepic_${imageName + 1}.png'),
                 radius: 36,
-              )
+              ),
             ],
           ),
         ],
